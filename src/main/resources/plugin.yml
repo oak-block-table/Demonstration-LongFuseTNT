@@ -1,0 +1,9 @@
+name: LongFuseTntPlugin
+description: TNT fuse switches to 25 seconds
+version: '0.01.05'
+main: org.hexagonalmagmacube.longfusetnt.LongFuseTntPlugin
+api-version: 1.16
+author: Oak Table
+startup: postworld
+
+commands:
