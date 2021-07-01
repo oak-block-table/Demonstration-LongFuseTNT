@@ -9,6 +9,8 @@ public class LongFuseTntPlugin extends JavaPlugin {
     private static final String PLUGIN_NAME = "LongFuseTnt";
     private boolean compatible;
 
+    ExplosionPrimeEventListener primeEventListener;
+
     @Override
     public void onDisable() {
         getLogger().info(PLUGIN_NAME + ": starting Disable sequence.");
@@ -30,6 +32,9 @@ public class LongFuseTntPlugin extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
+
+        this.primeEventListener = new ExplosionPrimeEventListener();
+        this.getServer().getPluginManager().registerEvents(this.primeEventListener, this);
 
         getLogger().info(PLUGIN_NAME + " has Started");
     }
