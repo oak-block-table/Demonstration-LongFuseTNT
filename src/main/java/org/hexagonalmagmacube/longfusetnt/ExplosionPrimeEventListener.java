@@ -14,10 +14,11 @@ public class ExplosionPrimeEventListener implements Listener {
         Entity original = event.getEntity();
         event.setCancelled(true);
 
-        TNTPrimed tnt = original.getWorld().spawn(original.getLocation(), TNTPrimed.class);
-        tnt.setFuseTicks(100);
+        TNTPrimed newTNT = original.getWorld().spawn(original.getLocation(), TNTPrimed.class);
+        newTNT.setFuseTicks(100);
         original.remove();
 
-        Bukkit.getLogger().info(original.getEntityId() + " was replaced by " + tnt.getEntityId());
+        Bukkit.getLogger().info(original.getEntityId() + " was replaced by " + newTNT.getEntityId());
+        return;
     }
 }
